@@ -22,6 +22,5 @@ int main(void)
 	printf("%3d %1d %1d \n", 5,5,5);
 	printf("%2d %1d %1d %1d \n", 5,5,5,5);
 	printf("%1d %1d %1d %1d %1d \n", 5,5,5,5,5);
-
 	return 0;
 }
