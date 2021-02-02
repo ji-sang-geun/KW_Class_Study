@@ -14,7 +14,7 @@ int main(void)
 
 	for (i = 0; i < 5; i++)
 	{
-		printf("%d ", *(arr + i));// 출력문 5번 반복
+		printf("%d ", *(arr + i));// 출력문
 	}
 
 	return 0;
