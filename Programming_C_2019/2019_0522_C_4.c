@@ -7,7 +7,7 @@ int main(void)
 	int *ptr2 = &arr[5]; //*ptr2는 배열 6번째
 	int i, change;
 
-	for (i = 0; i < 3; i++) //3번 반복문
+	for (i = 0; i < 3; i++) //3번 반복
 	{
 		change = *ptr1; 
 		*ptr1 = *ptr2;
@@ -17,10 +17,10 @@ int main(void)
 		ptr2 = ptr2 - 1;
 	}
 
-	for (i = 0; i < 6; i++) //6번 반복문
+	for (i = 0; i < 6; i++) //6번 반복
 	{
 		printf("%d ", *(arr + i));
 	}
-
+    
 	return 0;
 }
