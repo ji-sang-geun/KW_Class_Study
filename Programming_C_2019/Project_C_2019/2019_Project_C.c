@@ -19,7 +19,6 @@ typedef struct Information foodInfo;
 char fname[] = "foodinfo.txt";//확인할 파일명
 //"C:\\Users\\지상근\\source\\repos\\test1022\\foodinfo.txt";
 //"C:\\Users\\지상근\\Desktop\\foodinfo.txt";
-
 int size = 0;
 int key_input;
 
