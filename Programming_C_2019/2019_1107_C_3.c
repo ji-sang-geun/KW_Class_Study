@@ -5,7 +5,6 @@ int main(void)
 {
 	int x; // 정수형 x 지정
 	int y; // 정수형 y 지정
-	
 
 	printf("실수 x를 입력하고 Enter>"); // 출력문
 	scanf("%d", &x); //x를 입력하는 입력문
