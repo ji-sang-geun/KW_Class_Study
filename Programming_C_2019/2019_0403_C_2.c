@@ -15,5 +15,6 @@ int main(void)
 		printf("\n"); // 가독성을 높이기 위해서 \n을 사용하였다.
 		gugu++; //gugu에 1씩 추가한다.
 	}
+    
 	return 0;
 }
