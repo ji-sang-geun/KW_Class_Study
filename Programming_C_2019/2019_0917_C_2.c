@@ -1,48 +1,60 @@
-#include <stdio.h> // 헤더파일 정의
+#include <stdio.h>
 
-int main(void)
+void merge(int *A, int *B, int *C, int size) // 반환값이 없는 merge함수
 {
-	int a[10] = { 0 }; // 크기가 10인 a배열 0으로 초기화
-	int *ap = a;
-	int i = 0; // int형 i를 정의 및 0으로 초기화
-	int j = 0; // int형 j를 정의 및 0으로 초기화
-	int temp; // int형 temp 정의
 
-	for (i = 1; i <= 10; i++) // 10번 반복하는 반복문
-	{
-		printf("0~9 사이의 숫자 한번씩 입력하기 %d번째:", i); // 출력문
-		scanf("%d", (ap+(i-1))); // ap에 입력하는 입력문 / i-1인 이유는 i의 범위가 1부터 10까지이기 때문에, 1을 뺌으로서, 0부터 9까지의 범위를 받을 수 있음 
-	}
-	
-	printf("정렬전 배열 a ==> ");
-	for (i = 0; i < 10; i++) // 10번 반복하는 반복문
-	{
-		printf("%d ", *(ap + i)); // 정렬 전 포인터 ap 출력
-	}
-	printf("\n"); // 한 줄 띄우기
+	int i; // 8번 반복하기 위해 만든 int형 변수
+	int a = 0; // a는 4개이기 때문에 8 /2 로 함
+	int b = 0; // b도 마찬가지로 4개이기 때문에 8/2로 함
 
-	for (i = 0; i < 9; i++) // 9번 반복하는 반복문
+	for (i = 0; i < size; i++) // 8번 반복문이다.
 	{
-		for (j = i+1; j < 10; j++) // i+1부터 9까지 반복하는 반복문 
+		if (A[a] < B[b]) // 배열 A가 B보다 작다는 조건문이다.
 		{
-			if (*(ap+i) < *(ap+j)) // 만약 *(ap+i)가 *(ap+j)보다 작다면
+			C[i] = A[a];
+			if (a == 4 ) //혹시 A가 4이상일 경우를 대비한 조건문
 			{
-				*(ap+i) = *(ap+i); // 작은 값이 앞으로 와야하므로, a[i]는 고대로 유지가 된다.
+				C[i] = B[b];
+				b++;
 			}
-			else // 만약 *(ap+i)가 *(ap+j)보다 크다면
-			{
-				temp = *(ap+i); // 값을 바꿔준다.
-				*(ap+i) = *(ap+j); 
-				*(ap+j) = temp;
-			}
+			a++;
+			
+		}
+		else if (A[a] > B[b]) // 배열 A가 B보다 클 때를 나타내는 조건문
+		{
+			C[i] = B[b];
+			b++;
 		}
 	}
 
-	printf("정렬후 배열 a ==> ");
-	for (i = 0; i < 10; i++) // 10번 반복하는 반복문
+	printf("A = {"); //A 출력
+	for (i = 0; i < size / 2; i++)
 	{
-		printf("%d ", *(ap+i)); // 정렬 후 포인터 ap 출력
+		printf(" %d ", A[i]);
 	}
+	printf("} \n");
 
-	return 0; // 프로그램 종료
+	printf("B = {"); //B 출력
+	for (i = 0; i < size / 2; i++)
+	{
+		printf(" %d ", B[i]);
+	}
+	printf("} \n");
+
+	printf("C = {"); //C 출력
+	for (i = 0; i < size; i++)
+	{
+		printf(" %d ", C[i]);
+	}
+	printf("} \n");
+}
+
+int main(void)
+{
+	int A[] = { 1, 3, 4, 6 }; // 배열 A를 1,3,4,6으로 초기화
+	int B[] = { 2,5,7,8 }; // 배열 B를 2,5,7,8으로 초기화
+	int C[8]; //배열 길이가 8인 C배열
+
+	merge(A, B, C, sizeof(C) / sizeof(int));
+	return 0;
 }
