@@ -73,5 +73,4 @@ int main(void)
 	printf("가장 작은 수 : %d \n", result2); //가장 작은 값 출력
 
 	return 0;
-	
 }
