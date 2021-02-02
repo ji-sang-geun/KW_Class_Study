@@ -9,5 +9,6 @@ int main(void)
 		total1 = num + total1; //기존에 입력된 total1값에서 num값을 더하여 새로운 total1값을 만듭니다.
 	}
 	printf("입력된 모든 정수의 합: %d", total1); // 0이 나온다면 그동안 입력된 모든 정수의 합이 출력됩니다.
+    
 	return 0; // return 0;문을 통하여 종료가 됩니다.
 }
